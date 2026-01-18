@@ -1,0 +1,252 @@
+/* =========================================
+   1. GLOBAL STYLES & RESET
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* =========================================
+   2. STICKY NAVIGATION & HEADER
+   ========================================= */
+.top {
+    background: #002b5b; /* Professional Deep Blue */
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.top h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.navbar {
+    background: #1a4d8c;
+    text-align: center;
+    padding: 15px 0;
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #4facfe;
+}
+
+/* =========================================
+   3. SHINING ANIMATION (Advertising Text)
+   ========================================= */
+.shining-text {
+    font-weight: bold;
+    background: linear-gradient(
+        to right, 
+        #002b5b 20%, 
+        #4facfe 40%, 
+        #fceabb 50%, 
+        #4facfe 60%, 
+        #002b5b 80%
+    );
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine-effect 4s linear infinite;
+    display: inline-block;
+}
+
+@keyframes shine-effect {
+    to { background-position: 200% center; }
+}
+
+/* =========================================
+   4. HOME PAGE (Hero & Content)
+   ========================================= */
+.hero {
+    background: linear-gradient(rgba(0,43,91,0.8), rgba(0,43,91,0.8)), url('../images/hero-bg.jpg');
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero .btn {
+    display: inline-block;
+    background: #25d366;
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.hero .btn:hover {
+    background: #128c7e;
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   5. CONTACT CARD (Contact Page)
+   ========================================= */
+.contact-card {
+    display: flex;
+    max-width: 800px;
+    margin: 50px auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.profile-area {
+    flex: 1;
+    background: #fafafa;
+    padding: 40px;
+    text-align: center;
+    border-right: 1px solid #eee;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+}
+
+.content {
+    flex: 1.5;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.info-row i {
+    width: 30px;
+    color: #1a4d8c;
+    font-size: 1.2rem;
+}
+
+.btn-chat {
+    background: #25d366;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+/* =========================================
+   6. SERVICES & PROJECTS (Grids)
+   ========================================= */
+.services-grid, .content .project {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.service-card, .project {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    border-top: 5px solid #1a4d8c;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+/* =========================================
+   7. BLOG / TICKER (Updates Page)
+   ========================================= */
+.ticker-wrap {
+    width: 100%;
+    overflow: hidden;
+    background: #002b5b;
+    padding: 10px 0;
+    color: white;
+}
+
+.ticker {
+    display: inline-block;
+    white-space: nowrap;
+    animation: ticker-move 30s linear infinite;
+}
+
+.ticker__item {
+    display: inline-block;
+    padding: 0 2rem;
+}
+
+@keyframes ticker-move {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+.update-card {
+    background: white;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 700px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* =========================================
+   8. FOOTER & MOBILE
+   ========================================= */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: #002b5b;
+    color: white;
+    margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+    .contact-card {
+        flex-direction: column;
+        margin: 20px;
+    }
+    .profile-area { border-right: none; border-bottom: 1px solid #eee; }
+    .navbar a { margin: 0 5px; font-size: 14px; }
+}
